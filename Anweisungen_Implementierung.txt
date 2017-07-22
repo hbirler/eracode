@@ -1,0 +1,76 @@
+Erste Schritte
+--------------
+1. Aufgabe lesen
+2. Aufgabe nochmal lesen
+
+Spezifikation
+-------------
+den gewählten Lösungsansatz von der Spezifikation implementieren
+Wenn nicht möglich, mir schreiben
+
+Abgabeformat (MI)
+-----------------
+- JMic Datei mit Programm + Testdaten
+- Eine kleine Readme-Datei mit Erklärung der Tests:
+    "test1.mpr - Copies the string in address 0x0010 to address 0x0020
+    test2.mpr - Copies an empty string in address 0x0010 to address 0x0020"
+    
+- Alle Dateien lauffähig (mit IFETCH und Programm im Speicher)
+- Maschinenprogramm an der Adresse 0x0000
+- Mikroprogramm an der spezifizierten Adresse + Aufruf durch Maschinenprogramm an der Adresse 0x0000
+
+Kommentierung MI
+----------------
+- eine Kommentierung.txt datei
+- oder ein Bild mit Überschrift
+- mindestens Register und ihre Bedeutung
+
+Abgabeformat (ASM)
+------------------
+- C Rahmen Programm (.c Datei)
+- Assembler Programm (.asm Datei)
+- Make-Datei (Makefile) sollte auch auf Linux (z.B in der Rechnerhalle) funktionieren
+-- "usage" wenn ausgeführt ohne Parameter:
+
+    ...$ ./programm
+    Usage:  programm [option] eingabe
+            Try 'programm --help' for more information.
+            
+    ...$ ./programm --help
+            programm compare X - compares X values with C
+            programm calculate x - calclates fun(x)
+
+    oder
+    
+    ...$ ./programm
+    Usage:  programm [option] eingabe
+            programm compare X - compares X values with C
+            programm calculate x - calclates fun(x)
+            programm bless x - prints x times "all hail Yoav the wise"
+            
+- Tests auch im Rahmenprogramm
+
+Tests (ASM)
+-----------
+- mindestens 2 
+- vergleich mit der C Bibliothek wenn möglich (mit beliebigen Werten, Random etc.)
+- Zeitmessung + Genauigkeitsmessung
+- negative Tests (falsche Eingabe, leere Eingabe etc.) sind empfohlen,  das werde ich nämlich testen
+- Am Ende Ergebnisse ausgeben (Beispiel):
+    "  Average Accuarcy = 98%
+       Maximum Difference = 0.005
+       Total Runtime Assembler = 56ms
+       Total Runtime C = 105ms 
+       
+       Negative Test 1 result = NaN
+       Negative Test 2 result = NaN
+    "
+
+Kommentierung im Code
+---------------------
+- auf Englisch (so macht man), Empfehlung(!), auf Deutsch geht es auch
+- Alle Register und ihre Aufgaben
+- grobe Struktur (Initialisierung, Schleife A, Schleife B, Rückgabe ...)
+- nicht triviale Berechnungen
+- sinnvolle Namen für Makros
+       

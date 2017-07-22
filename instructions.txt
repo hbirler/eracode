@@ -1,0 +1,14 @@
+#install requirements
+#use linux subsystem if testing on windows
+#tested with gcc 5.4.0, make 4.1
+sudo apt-get install make build-essential nasm
+
+#clean build
+make clean
+
+#build project
+make
+
+#run project
+bin/project
+bin/project help
